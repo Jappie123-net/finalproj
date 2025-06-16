@@ -1,0 +1,196 @@
+/* App.css */
+
+.App {
+  text-align: left;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Spinner Animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+  margin: 0 auto;
+}
+
+.spinner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  border: 1px solid #dee2e6;
+}
+
+/* News Card Styles */
+.news-card {
+  transition: all 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .App {
+    padding: 1rem !important;
+  }
+  
+  .news-card {
+    padding: 1rem !important;
+  }
+  
+  .news-card h2 {
+    font-size: 1.1rem !important;
+  }
+  
+  /* Make form elements stack on mobile */
+  form > div {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  
+  form input[type="url"] {
+    min-width: auto !important;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Stack control elements on mobile */
+  .controls {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  
+  .controls label {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Button Styles */
+button {
+  transition: all 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Link Styles */
+a {
+  transition: all 0.2s ease;
+}
+
+/* Form Styles */
+input, select {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+/* Success/Error Message Styles */
+.success-message {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+/* Quick select buttons */
+.quick-select-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.quick-select-buttons button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  color: #333;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.quick-select-buttons button:hover:not(:disabled) {
+  background-color: #e9ecef;
+  border-color: #adb5bd;
+}
+
+.quick-select-buttons button.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+/* Loading state */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus indicators for keyboard navigation */
+button:focus,
+input:focus,
+select:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
